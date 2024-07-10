@@ -18,3 +18,6 @@ export type Attraction = {
   export type AttractionCardProps = {
     imageSrc: string | null;
   }
+
+
+
