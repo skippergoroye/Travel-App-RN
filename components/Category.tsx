@@ -10,16 +10,16 @@ const Category = () => {
       <FlatList
         data={category}
         horizontal
-        showsHorizontalScrollIndicator={false} // Hide the scroll indicator
+        showsHorizontalScrollIndicator={false} 
         keyExtractor={(item, index) => item}
-        renderItem={({ item }) => {
+        renderItem={({ item, index}) => {
           const selected = selectedCategory === item;
           return (
             <TouchableOpacity
               onPress={() => setSelectedCategory(item)}
               className={`mr-[16px] ${selected ? "border-b border-[#4681A3]" : ""} `}
             >
-              <Text className={`mb-1 text-black-50 text-[12px] ${selected ? "text-black" : ""}`}>
+              <Text className={`mb-1 text-black-50 text-[12px] ${selected ? "text-black" : ""} ${index === 0 ? "ml-1" : ""}`}>
                 {item}
               </Text>
             </TouchableOpacity>
