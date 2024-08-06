@@ -20,4 +20,11 @@ export type Attraction = {
   }
 
 
+  export type AttractionDetailsP = {
+    id: number;
+    name: string;
+    city: string;
+    images?: string[];
+  };
+
 

@@ -3,9 +3,6 @@ import AttractionCard from "./AttractionCard";
 
 
 
-
-
-
 export {
     Category,
     AttractionCard

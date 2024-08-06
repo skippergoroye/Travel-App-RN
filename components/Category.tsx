@@ -1,12 +1,10 @@
-// 
-
-
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import category from "../constants/categories.json";
 import attraction from "../constants/attractions.json";
 import { Attraction } from "@/types";
 import AttractionCard from "./AttractionCard";
+import { router } from 'expo-router';
 
 const ALL = "ALL";
 
@@ -29,8 +27,11 @@ const Category = () => {
     }
   }, [selectedCategory]);
 
+
+
+
   return (
-    <View className="mt-[10%]">
+    <View className="mt-[2%] p-2">
       <FlatList
         data={category}
         horizontal
@@ -69,6 +70,10 @@ const Category = () => {
                 ? { marginRight: 12, marginLeft: 32 }
                 : { marginRight: 32 }
             }
+            onPress={() => router.push({
+              pathname: `/attractionDetails/${item.id}`,
+              params: { item: JSON.stringify(item) }
+            })}
             title={item.name}
             subtitle={item.city}
             imageSrc={item.images?.length ? item.images[0] : ""}
